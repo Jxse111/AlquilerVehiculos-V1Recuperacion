@@ -51,7 +51,7 @@ public class ModeloTest {
 	private static IAlquileres alquileres;
 
 	private static Cliente cliente;
-	private static Turismo turismo;
+	private static Vehiculo turismo;
 	private static Alquiler alquiler;
 	private static LocalDate hoy;
 	private static LocalDate ayer;
@@ -71,7 +71,7 @@ public class ModeloTest {
 		when(cliente.getTelefono()).thenReturn("950112233");
 		turismo = mock();
 		mockConstruction(Vehiculos.class);
-		mockConstruction(Turismo.class);
+		mockConstruction(Vehiculo.class);
 		when(turismo.getMarca()).thenReturn("Seat");
 		when(turismo.getModelo()).thenReturn("León");
 		when(turismo.getMatricula()).thenReturn("1234BCD");

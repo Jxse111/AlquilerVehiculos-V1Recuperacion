@@ -24,11 +24,11 @@ public class TurismoTest {
 	private static final int CILINDRADA_VALIDA = 90;
 	private static final String MATRICULA_VALIDA = "1234BCD";
 	
-	private Turismo turismo;
+	private Vehiculo turismo;
 	
 	@BeforeEach
 	void init() {
-		turismo = new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
+		turismo = new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
 	}
 
 	@Test
@@ -38,67 +38,67 @@ public class TurismoTest {
 		assertEquals(CILINDRADA_VALIDA, turismo.getCilindrada());
 		assertEquals(MATRICULA_VALIDA, turismo.getMatricula());
 		assertEquals(9, turismo.getFactorPrecio());
-		turismo = new Turismo("Land Rover", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
-		turismo = new Turismo("KIA", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
-		turismo = new Turismo("Rolls-Royce", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
-		turismo = new Turismo("SsangYong", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
+		turismo = new Vehiculo("Land Rover", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
+		turismo = new Vehiculo("KIA", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
+		turismo = new Vehiculo("Rolls-Royce", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
+		turismo = new Vehiculo("SsangYong", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA);
 	}
 	
 	@Test
 	void constructorMarcaNoValidaModeloValidoCilindradaValidaMatrivaValidaLanzaExcepcion() {
-		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Turismo(null, MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Vehiculo(null, MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_MARCA_NULA, npe.getMessage());
-		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("  ", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("  ", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("AA-BB", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("AA-BB", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("aa", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("aa", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo("aa bb", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo("aa bb", MODELO_VALIDO, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_FORMATO_MARCA_NO_VALIDA, iae.getMessage());
 	}
 	
 	@Test
 	void constructorMarcaValidaModeloNoValidoCilindradaValidaMatrivaValidaLanzaExcepcion() {
-		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Turismo(MARCA_VALIDA, null, CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Vehiculo(MARCA_VALIDA, null, CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_MODELO_NULO, npe.getMessage());
-		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, "", CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, "", CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_MODELO_BLANCO, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, " ", CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, " ", CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_MODELO_BLANCO, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, "	", CILINDRADA_VALIDA, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, "	", CILINDRADA_VALIDA, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_MODELO_BLANCO, iae.getMessage());
 	}
 	
 	@Test
 	void constructorMarcaValidaModeloValidoCilindradaNoValidaMatrivaValidaLanzaExcepcion() {
-		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, 0, MATRICULA_VALIDA));
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, 0, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_CILINDRADA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, 5001, MATRICULA_VALIDA));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, 5001, MATRICULA_VALIDA));
 		assertEquals(MENSAJE_ERROR_CILINDRADA_NO_VALIDA, iae.getMessage());
 	}
 	
 	@Test
 	void constructorMarcaValidaModeloValidoCilindradaValidaMatrivaNoValidaLanzaExcepcion() {
-		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, null));
+		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, null));
 		assertEquals(MENSAJE_ERROR_MATRICULA_NULA, npe.getMessage());
-		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234bcd"));
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234bcd"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234ABC"));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234ABC"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234BC"));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1234BC"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "234BCD"));
+		iae = assertThrows(IllegalArgumentException.class, () -> new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "234BCD"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
 	}
 	
 	@Test
 	void constructorTurismoValidoCopiaTurismoCorrectamente() {
-		Turismo turismoCopia = new Turismo(turismo);
+		Vehiculo turismoCopia = new Vehiculo(turismo);
 		assertEquals(turismo, turismoCopia);
 		assertNotSame(turismo, turismoCopia);
 		assertEquals(MARCA_VALIDA, turismoCopia.getMarca());
@@ -109,38 +109,38 @@ public class TurismoTest {
 	
 	@Test
 	void constructorTurismoNuloLanzaExcepcion() {
-		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Turismo(null));
+		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Vehiculo(null));
 		assertEquals(MENSAJE_ERROR_VEHICULO_NULO, npe.getMessage());
 	}
 	
 	@Test
 	void getTurismoConMatriculaValidaDevuelveTurismoConDichaMatricula() {
-		Vehiculo turismo = Turismo.getVehiculoConMatricula(MATRICULA_VALIDA);
+		Vehiculo turismo = Vehiculo.getVehiculoConMatricula(MATRICULA_VALIDA);
 		assertEquals(MATRICULA_VALIDA, turismo.getMatricula());
 	}
 	
 	@Test
 	void getTurismoConMatriculaNoValidaLanzaExcepcion() {
-		NullPointerException npe = assertThrows(NullPointerException.class, () -> Turismo.getVehiculoConMatricula(null));
+		NullPointerException npe = assertThrows(NullPointerException.class, () -> Vehiculo.getVehiculoConMatricula(null));
 		assertEquals(MENSAJE_ERROR_MATRICULA_NULA, npe.getMessage());
-		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> Turismo.getVehiculoConMatricula("1234bcd"));
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> Vehiculo.getVehiculoConMatricula("1234bcd"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> Turismo.getVehiculoConMatricula("1234ABC"));
+		iae = assertThrows(IllegalArgumentException.class, () -> Vehiculo.getVehiculoConMatricula("1234ABC"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> Turismo.getVehiculoConMatricula("1234BC"));
+		iae = assertThrows(IllegalArgumentException.class, () -> Vehiculo.getVehiculoConMatricula("1234BC"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
-		iae = assertThrows(IllegalArgumentException.class, () -> Turismo.getVehiculoConMatricula("234BCD"));
+		iae = assertThrows(IllegalArgumentException.class, () -> Vehiculo.getVehiculoConMatricula("234BCD"));
 		assertEquals(MENSAJE_ERROR_FORMATO_MATRICULA_NO_VALIDA, iae.getMessage());
 	}
 	
 	@Test
 	void equalsYHasCodeConsistentes() {
-		Vehiculo turismoIgual = Turismo.getVehiculoConMatricula(MATRICULA_VALIDA);
+		Vehiculo turismoIgual = Vehiculo.getVehiculoConMatricula(MATRICULA_VALIDA);
 		assertEquals(turismo, turismo);
 		assertEquals(turismo, turismoIgual);
 		assertEquals(turismoIgual, turismo);
 		assertEquals(turismo.hashCode(), turismoIgual.hashCode());
-		Vehiculo turismoDiferente = new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1111BBB");
+		Vehiculo turismoDiferente = new Vehiculo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1111BBB");
 		assertNotEquals(turismo, "");
 		assertNotEquals(turismo, turismoDiferente);
 		assertNotEquals(turismo.hashCode(), turismoDiferente.hashCode());

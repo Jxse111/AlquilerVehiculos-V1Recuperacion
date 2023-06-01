@@ -87,16 +87,16 @@ public class Consola {
 
 	}
 
-	public static Turismo leerTurismo() {
-		return new Turismo(leerCadena("Introduce la marca del turismo: "),
+	public static Vehiculo leerTurismo() {
+		return new Vehiculo(leerCadena("Introduce la marca del turismo: "),
 				(leerCadena("Introduce el modelo del turismo: ")),
 				(leerEntero("Introduce la cilindrada del turismo: ")),
 				(leerCadena("Introduce la matrícula del turismo: ")));
 
 	}
 
-	public static Turismo leerTurismoMatricula() {
-		return Turismo.getTurismoConMatricula(leerCadena("Introduce la matrícula del turismo: "));
+	public static Vehiculo leerTurismoMatricula() {
+		return Vehiculo.getTurismoConMatricula(leerCadena("Introduce la matrícula del turismo: "));
 
 	}
 

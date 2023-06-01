@@ -8,7 +8,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 
 	public class Turismos {
 
-		List<Turismo> coleccionTurismo;
+		List<Vehiculo> coleccionTurismo;
 
 		public Turismos() {
 
@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 
 		}
 
-		public List<Turismo> get() {
+		public List<Vehiculo> get() {
 
 			return coleccionTurismo;
 		}
@@ -24,7 +24,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 		public int getCantidad() {
 
 			int cantidadElementos = 0;
-			for (Turismo turismos : coleccionTurismo) {
+			for (Vehiculo turismos : coleccionTurismo) {
 
 				cantidadElementos++;
 			}
@@ -32,7 +32,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 			return cantidadElementos;
 		}
 
-		public void insertar(Turismo turismo) throws OperationNotSupportedException {
+		public void insertar(Vehiculo turismo) throws OperationNotSupportedException {
 
 			if (turismo == null) {
 				throw new NullPointerException("ERROR: No se puede insertar un turismo nulo.");
@@ -45,7 +45,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 			}
 		}
 
-		public Turismo buscar(Turismo turismo) {
+		public Vehiculo buscar(Vehiculo turismo) {
 
 			if (turismo == null) {
 				throw new NullPointerException("ERROR: No se puede buscar un turismo nulo.");
@@ -58,7 +58,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 
 		}
 
-		public void borrar(Turismo turismo) throws OperationNotSupportedException {
+		public void borrar(Vehiculo turismo) throws OperationNotSupportedException {
 
 			if (turismo == null) {
 				throw new NullPointerException("ERROR: No se puede borrar un turismo nulo.");

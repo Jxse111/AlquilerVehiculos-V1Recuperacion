@@ -13,9 +13,9 @@ public class Alquiler {
 	private LocalDate fechaAlquiler;
 	private LocalDate fechaDevolucion;
 	private Cliente cliente;
-	private Turismo turismo;
+	private Vehiculo turismo;
 
-	public Alquiler(Cliente cliente, Turismo turismo, LocalDate fechaAlquiler) {
+	public Alquiler(Cliente cliente, Vehiculo turismo, LocalDate fechaAlquiler) {
 		setCliente(cliente);
 		setTurismo(turismo);
 		setFechaAlquiler(fechaAlquiler);
@@ -26,7 +26,7 @@ public class Alquiler {
 			throw new NullPointerException("ERROR: No es posible copiar un alquiler nulo.");
 		}
 		this.cliente = new Cliente(alquiler.getCliente());
-		this.turismo = new Turismo(alquiler.getTurismo());
+		this.turismo = new Vehiculo(alquiler.getTurismo());
 		this.fechaAlquiler = alquiler.getFechaAlquiler();
 		this.fechaDevolucion = alquiler.getFechaDevolucion();
 	}
@@ -58,11 +58,11 @@ public class Alquiler {
 		this.cliente = cliente;
 	}
 
-	public Turismo getTurismo() {
+	public Vehiculo getTurismo() {
 		return turismo;
 	}
 
-	public void setTurismo(Turismo turismo) {
+	public void setTurismo(Vehiculo turismo) {
 		this.turismo = turismo;
 	}
 

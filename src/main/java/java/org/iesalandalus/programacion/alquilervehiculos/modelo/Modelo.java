@@ -38,7 +38,7 @@ public class Modelo {
 		clientes.insertar(cliente);
 	}
 
-	public void insertar(Turismo turismo) throws OperationNotSupportedException {
+	public void insertar(Vehiculo turismo) throws OperationNotSupportedException {
 		turismos.insertar(turismo);
 	}
 
@@ -51,7 +51,7 @@ public class Modelo {
 		if (clienteNuevo == null) {
 			throw new OperationNotSupportedException("ERROR: No existe el cliente del alquiler.");
 		}
-		Turismo turismoNuevo = turismos.buscar(alquiler.getTurismo());
+		Vehiculo turismoNuevo = turismos.buscar(alquiler.getTurismo());
 		if (turismoNuevo == null) {
 			throw new OperationNotSupportedException("ERROR: No existe el turismo del alquiler.");
 		}
@@ -63,8 +63,8 @@ public class Modelo {
 
 	}
 
-	public Turismo buscar(Turismo turismo) {
-		return new Turismo(turismos.buscar(turismo));
+	public Vehiculo buscar(Vehiculo turismo) {
+		return new Vehiculo(turismos.buscar(turismo));
 	}
 
 	public Alquiler buscar(Alquiler alquiler) {
@@ -93,7 +93,7 @@ public class Modelo {
 		clientes.borrar(cliente);
 	}
 
-	public void borrar(Turismo turismo) throws OperationNotSupportedException {
+	public void borrar(Vehiculo turismo) throws OperationNotSupportedException {
 		for (Alquiler alquiler : alquileres.get(turismo)) {
 			alquileres.borrar(alquiler);
 		}
@@ -114,10 +114,10 @@ public class Modelo {
 		return listaClientes;
 	}
 
-	public List<Turismo> getTurismos() {
-		List<Turismo> listaTurismo = new ArrayList<>();
-		for (Turismo turismo : turismos.get()) {
-			listaTurismo.add(new Turismo(turismo));
+	public List<Vehiculo> getTurismos() {
+		List<Vehiculo> listaTurismo = new ArrayList<>();
+		for (Vehiculo turismo : turismos.get()) {
+			listaTurismo.add(new Vehiculo(turismo));
 		}
 		return listaTurismo;
 	}
@@ -138,7 +138,7 @@ public class Modelo {
 		return listaAlquileresCliente;
 	}
 
-	public List<Alquiler> getAlquileres(Turismo turismo) {
+	public List<Alquiler> getAlquileres(Vehiculo turismo) {
 		List<Alquiler> listaAlquileresTurismo = new ArrayList<>();
 		for (Alquiler alquiler : alquileres.get(turismo)) {
 			listaAlquileresTurismo.add(new Alquiler(alquiler));

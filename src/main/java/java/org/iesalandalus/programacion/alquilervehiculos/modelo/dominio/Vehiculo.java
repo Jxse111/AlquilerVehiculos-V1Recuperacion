@@ -1,8 +1,8 @@
-package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
+package java.org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.util.Objects;
 
-public class Turismo {
+public class Vehiculo {
 	private static final String ER_MARCA = "(Seat|Land Rover|KIA|Rolls-Royce|SsangYong)";
 	private static final String ER_MATRICULA = "[0-9]{4}[BCDFGHJKLMNÑPQRSTVWXYZ]{3}";
 	private String marca;
@@ -10,14 +10,14 @@ public class Turismo {
 	private int cilindrada;
 	private String matricula;
 
-	public Turismo(String marca, String modelo, int cilindrada, String matricula) throws IllegalArgumentException {
+	public Vehiculo(String marca, String modelo, int cilindrada, String matricula) throws IllegalArgumentException {
 		setMarca(marca);
 		setModelo(modelo);
 		setCilindrada(cilindrada);
 		setMatricula(matricula);
 	}
 
-	public Turismo(Turismo turismo) {
+	public Vehiculo(Vehiculo turismo) {
 		if (turismo == null) {
 			throw new NullPointerException("ERROR: No es posible copiar un turismo nulo.");
 		}
@@ -73,8 +73,8 @@ public class Turismo {
 		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
 	}
 
-	public static Turismo getTurismoConMatricula(String matricula) {
-		return new Turismo("Seat", "León", 90, matricula);
+	public static Vehiculo getTurismoConMatricula(String matricula) {
+		return new Vehiculo("Seat", "León", 90, matricula);
 	}
 
 	public int getPrecioDiario() {
@@ -91,9 +91,9 @@ public class Turismo {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!(obj instanceof Turismo))
+		if (!(obj instanceof Vehiculo))
 			return false;
-		Turismo other = (Turismo) obj;
+		Vehiculo other = (Vehiculo) obj;
 		return cilindrada == other.cilindrada && Objects.equals(marca, other.marca)
 				&& Objects.equals(matricula, other.matricula) && Objects.equals(modelo, other.modelo);
 	}

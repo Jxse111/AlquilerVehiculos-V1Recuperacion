@@ -45,8 +45,8 @@ public class AlquileresTest {
 	private static Alquiler alquiler4;
 	private static Cliente cliente1;
 	private static Cliente cliente2;
-	private static Turismo turismo1;
-	private static Turismo turismo2;
+	private static Vehiculo turismo1;
+	private static Vehiculo turismo2;
 	private static LocalDate hoy;
 	private static LocalDate ayer;
 	private static LocalDate anteayer;

@@ -226,7 +226,7 @@ public class Vista {
 	private void listarTurismos() {
 		try {
 			Consola.mostrarCabecera("Listar turismos");
-			for (Turismo turismoLista : controlador.getTurismos()) {
+			for (Vehiculo turismoLista : controlador.getTurismos()) {
 				System.out.println(turismoLista);
 			}
 		} catch (IllegalArgumentException | NullPointerException e) {

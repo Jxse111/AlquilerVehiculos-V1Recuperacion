@@ -31,7 +31,7 @@ public class AlquilerTest {
 	private static final String MENSAJE_ERROR_ALQUILER_NULO = "ERROR: No es posible copiar un alquiler nulo.";
 
 	private static Cliente cliente;
-	private static Turismo turismo;
+	private static Vehiculo turismo;
 	private static LocalDate hoy;
 	private static LocalDate ayer;
 	private static LocalDate manana;
