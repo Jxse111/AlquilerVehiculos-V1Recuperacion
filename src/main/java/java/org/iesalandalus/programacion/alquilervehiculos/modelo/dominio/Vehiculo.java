@@ -26,7 +26,7 @@ public abstract class Vehiculo {
 			public static Vehiculo getVehiculoConMatricula(String matricula) {
 				return new Vehiculo();
 			}
-			public abstract void getFactorPrecio();
+			public abstract int getFactorPrecio();
 
 		public String getMarca() {
 			return marca;
