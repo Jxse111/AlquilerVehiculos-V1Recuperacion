@@ -36,8 +36,8 @@ public class Turismo extends Vehiculo {
 			throw new IllegalArgumentException("Cilindrada no es correcta");
 		}
 	}
-	public void getFactorPrecio() {
-		return;
+	public int getFactorPrecio() {
+		return FACTOR_CILINDRADA;
 	}
 
 	@Override
