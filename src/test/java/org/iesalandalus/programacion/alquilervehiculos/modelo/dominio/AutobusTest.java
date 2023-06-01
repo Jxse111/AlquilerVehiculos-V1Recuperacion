@@ -116,12 +116,12 @@ public class AutobusTest {
 	
 	@Test
 	void equalsYHasCodeConsistentes() {
-		Vehiculo autobusIgual = new Autobus(autobus);
+		Turismo autobusIgual = new Autobus(autobus);
 		assertEquals(autobus, autobus);
 		assertEquals(autobus, autobusIgual);
 		assertEquals(autobusIgual, autobus);
 		assertEquals(autobus.hashCode(), autobusIgual.hashCode());
-		Vehiculo autobusDiferente = new Autobus(MARCA_VALIDA, MODELO_VALIDO, PLAZAS_VALIDAS, "1111BBB");
+		Turismo autobusDiferente = new Autobus(MARCA_VALIDA, MODELO_VALIDO, PLAZAS_VALIDAS, "1111BBB");
 		assertNotEquals(autobus, "");
 		assertNotEquals(autobus, autobusDiferente);
 		assertNotEquals(autobus.hashCode(), autobusDiferente.hashCode());

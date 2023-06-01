@@ -27,8 +27,8 @@ public class VehiculosTest {
 	private static final String MENSAJE_ERROR_VEHICULO_EXISTE = "ERROR: Ya existe un vehículo con esa matrícula.";
 	private static final String MENSAJE_ERROR_VEHICULO_BORRAR_NO_EXISTE = "ERROR: No existe ningún vehículo con esa matrícula.";
 
-	private static Vehiculo vehiculo1;
-	private static Vehiculo vehiculo2;
+	private static Turismo vehiculo1;
+	private static Turismo vehiculo2;
 	private IVehiculos vehiculos;
 
 	@BeforeAll
@@ -54,7 +54,7 @@ public class VehiculosTest {
 	void getDevuelveVehiculosCorrectamente() {
 		assertDoesNotThrow(() -> vehiculos.insertar(vehiculo1));
 		assertDoesNotThrow(() -> vehiculos.insertar(vehiculo2));
-		List<Vehiculo> copiaVehiculos = vehiculos.get();
+		List<Turismo> copiaVehiculos = vehiculos.get();
 		assertEquals(2, copiaVehiculos.size());
 		assertEquals(vehiculo1, copiaVehiculos.get(0));
 		assertSame(vehiculo1, copiaVehiculos.get(0));
