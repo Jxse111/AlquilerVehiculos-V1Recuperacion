@@ -9,12 +9,12 @@ public abstract class Vehiculo {
 	public String modelo;
 	public String matricula;
 
-	protected void Vehiculo(String marca, String modelo, String matricula) throws IllegalArgumentException {
+	protected Vehiculo(String marca, String modelo, String matricula) throws IllegalArgumentException {
 		setMarca(marca);
 		setModelo(modelo);
 		setMatricula(matricula);
 	}
-		protected void Vehiculo(Vehiculo vehiculo) {
+		protected Vehiculo(Vehiculo vehiculo) {
 			if (vehiculo == null) {
 				throw new NullPointerException("ERROR: No es posible copiar un turismo nulo.");
 			}
