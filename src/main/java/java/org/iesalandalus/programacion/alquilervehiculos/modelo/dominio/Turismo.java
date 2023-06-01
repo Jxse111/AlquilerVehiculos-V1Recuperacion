@@ -2,7 +2,7 @@ package java.org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.util.Objects;
 
-public class Turismo {
+public class Turismo extends Vehiculo {
 	int cilindrada;
 	int FACTOR_CILINDRADA;
 	public String marca;
