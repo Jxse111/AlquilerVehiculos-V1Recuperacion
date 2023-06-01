@@ -46,7 +46,7 @@ public class Controlador {
 		modelo.insertar(cliente);
 	}
 
-	public void insertar(Vehiculo turismo) throws OperationNotSupportedException {
+	public void insertar(Turismo turismo) throws OperationNotSupportedException {
 		modelo.insertar(turismo);
 	}
 
@@ -58,7 +58,7 @@ public class Controlador {
 		return modelo.buscar(cliente);
 	}
 
-	public Vehiculo buscar(Vehiculo turismo) {
+	public Turismo buscar(Turismo turismo) {
 		return modelo.buscar(turismo);
 	}
 
@@ -78,7 +78,7 @@ public class Controlador {
 		modelo.borrar(cliente);
 	}
 
-	public void borrar(Vehiculo turismo) throws OperationNotSupportedException {
+	public void borrar(Turismo turismo) throws OperationNotSupportedException {
 		modelo.borrar(turismo);
 	}
 
@@ -91,7 +91,7 @@ public class Controlador {
 
 	}
 
-	public List<Vehiculo> getTurismos() {
+	public List<Turismo> getTurismos() {
 		return modelo.getTurismos();
 
 	}
@@ -106,7 +106,7 @@ public class Controlador {
 
 	}
 
-	public List<Alquiler> getAlquileres(Vehiculo turismo) {
+	public List<Alquiler> getAlquileres(Turismo turismo) {
 		return modelo.getAlquileres(turismo);
 
 	}

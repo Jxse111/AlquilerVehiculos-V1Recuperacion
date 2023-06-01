@@ -31,7 +31,7 @@ public class AlquilerTest {
 	private static final String MENSAJE_ERROR_ALQUILER_NULO = "ERROR: No es posible copiar un alquiler nulo.";
 
 	private static Cliente cliente;
-	private static Vehiculo turismo;
+	private static Turismo turismo;
 	private static LocalDate hoy;
 	private static LocalDate ayer;
 	private static LocalDate manana;
@@ -64,7 +64,7 @@ public class AlquilerTest {
 		when(turismo.getFactorPrecio()).thenReturn(9);
 	}
 	
-	private void setComportamiento(Vehiculo turismo, String matricula) {
+	private void setComportamiento(Turismo turismo, String matricula) {
 		when(turismo.getMatricula()).thenReturn(matricula);
 	}
 	

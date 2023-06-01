@@ -51,7 +51,7 @@ public class ModeloTest {
 	private static IAlquileres alquileres;
 
 	private static Cliente cliente;
-	private static Vehiculo turismo;
+	private static Turismo turismo;
 	private static Alquiler alquiler;
 	private static LocalDate hoy;
 	private static LocalDate ayer;
@@ -71,7 +71,7 @@ public class ModeloTest {
 		when(cliente.getTelefono()).thenReturn("950112233");
 		turismo = mock();
 		mockConstruction(Vehiculos.class);
-		mockConstruction(Vehiculo.class);
+		mockConstruction(Turismo.class);
 		when(turismo.getMarca()).thenReturn("Seat");
 		when(turismo.getModelo()).thenReturn("León");
 		when(turismo.getMatricula()).thenReturn("1234BCD");
@@ -114,7 +114,7 @@ public class ModeloTest {
 	@Test
 	void insertarVehiculoLlamaVehiculosInsertar() {
 		assertDoesNotThrow(() -> modelo.insertar(turismo));
-		assertDoesNotThrow(() -> verify(vehiculos).insertar(any(Vehiculo.class)));
+		assertDoesNotThrow(() -> verify(vehiculos).insertar(any(Turismo.class)));
 		assertNotSame(turismo, modelo.buscar(turismo));
 	}
 
@@ -148,7 +148,7 @@ public class ModeloTest {
 	@Test
 	void buscarVehiculoLlamaVehiculosBuscar() {
 		assertDoesNotThrow(() -> modelo.insertar(turismo));
-		Vehiculo vehiculoBuscado = modelo.buscar(turismo);
+		Turismo vehiculoBuscado = modelo.buscar(turismo);
 		verify(vehiculos).buscar(turismo);
 		assertNotSame(turismo, vehiculoBuscado);
 	}
@@ -242,10 +242,10 @@ public class ModeloTest {
 	
 	@Test
 	void getVehiculossLlamaVehiculosGet() {
-		List<Vehiculo> vehiculosDevueltos = new ArrayList<>();
+		List<Turismo> vehiculosDevueltos = new ArrayList<>();
 		vehiculosDevueltos.add(turismo);
 		when(vehiculos.get()).thenReturn(vehiculosDevueltos);
-		List<Vehiculo> vehiculosExistentes = modelo.getListaVehiculos();
+		List<Turismo> vehiculosExistentes = modelo.getListaVehiculos();
 		verify(vehiculos).get();
 		assertNotSame(turismo, vehiculosExistentes.get(0));
 	}

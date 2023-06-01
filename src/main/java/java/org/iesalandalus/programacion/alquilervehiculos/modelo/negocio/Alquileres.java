@@ -36,7 +36,7 @@ public class Alquileres {
 
 	}
 
-	public List<Alquiler> get(Vehiculo turismo) {
+	public List<Alquiler> get(Turismo turismo) {
 
 		List<Alquiler> listaNuevaTurismo = new ArrayList<>();
 
@@ -58,7 +58,7 @@ public class Alquileres {
 
 	}
 
-	private void comprobarAlquiler(Cliente cliente, Vehiculo turismo, LocalDate fechaAlquiler)
+	private void comprobarAlquiler(Cliente cliente, Turismo turismo, LocalDate fechaAlquiler)
 			throws OperationNotSupportedException {
 		for (Alquiler alquiler : coleccionAlquileres) {
 
