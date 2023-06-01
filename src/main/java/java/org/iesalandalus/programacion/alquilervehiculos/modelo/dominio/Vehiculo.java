@@ -40,7 +40,7 @@ public abstract class Vehiculo {
 		public void setModelo(String modelo) {
 			this.modelo = modelo;
 		}
-		public String getMatricula() {
+		public static String getMatricula() {
 			return matricula;
 		}
 		public void setMatricula(String matricula) {

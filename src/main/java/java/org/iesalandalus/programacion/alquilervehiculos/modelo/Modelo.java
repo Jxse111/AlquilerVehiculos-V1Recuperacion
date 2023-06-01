@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.Turismos;
 public class Modelo {
 	Clientes clientes;
 	Alquileres alquileres;
-	Turismos turismos;
+	Vehiculos turismos;
 
 	public Modelo() {
 
@@ -25,7 +25,7 @@ public class Modelo {
 	public void comenzar() {
 		clientes = new Clientes();
 		alquileres = new Alquileres();
-		turismos = new Turismos();
+		turismos = new Vehiculos();
 
 	}
 
