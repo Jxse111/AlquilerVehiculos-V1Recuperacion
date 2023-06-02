@@ -19,7 +19,7 @@ public abstract class Vehiculo {
 				throw new NullPointerException("ERROR: No es posible copiar un turismo nulo.");
 			}
 		}
-			public Vehiculo copiar (Vehiculo Vehiculo) {
+			public static Vehiculo copiar (Vehiculo Vehiculo) {
 				return Vehiculo;
 			}
 			
