@@ -9,7 +9,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 
-public class Alquileres {
+public class Alquileres implements IAlquileres {
 
 	List<Alquiler> coleccionAlquileres;
 
@@ -19,10 +19,12 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public List<Alquiler> get() {
 		return coleccionAlquileres;
 	}
 
+	@Override
 	public List<Alquiler> get(Cliente cliente) {
 
 		List<Alquiler> listaNuevaCliente = new ArrayList<>();
@@ -36,6 +38,7 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public List<Alquiler> get(Turismo turismo) {
 
 		List<Alquiler> listaNuevaTurismo = new ArrayList<>();
@@ -52,6 +55,7 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public int getCantidad() {
 
 		return coleccionAlquileres.size();
@@ -86,6 +90,7 @@ public class Alquileres {
 		}
 	}
 
+	@Override
 	public void insertar(Alquiler alquiler) throws OperationNotSupportedException {
 
 		if (alquiler == null) {
@@ -99,6 +104,7 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public void devolver(Alquiler alquiler, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 
 		if (alquiler == null) {
@@ -115,6 +121,7 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public Alquiler buscar(Alquiler alquiler) {
 
 		if (alquiler == null) {
@@ -132,6 +139,7 @@ public class Alquileres {
 
 	}
 
+	@Override
 	public void borrar(Alquiler alquiler) throws OperationNotSupportedException {
 
 		if (alquiler == null) {

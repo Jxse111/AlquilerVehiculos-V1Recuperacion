@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 	import javax.naming.OperationNotSupportedException;
 
-	public class Vehiculos {
+	public class Vehiculos implements IVehiculos {
 
 		List<Vehiculo> coleccionTurismo;
 
@@ -15,11 +15,13 @@ import java.util.ArrayList;
 
 		}
 
+		@Override
 		public List<Vehiculo> get() {
 
 			return coleccionTurismo;
 		}
 
+		@Override
 		public int getCantidad() {
 
 			int cantidadElementos = 0;
@@ -31,6 +33,7 @@ import java.util.ArrayList;
 			return cantidadElementos;
 		}
 
+		@Override
 		public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
 
 			if (vehiculo == null) {
@@ -44,6 +47,7 @@ import java.util.ArrayList;
 			}
 		}
 
+		@Override
 		public Vehiculo buscar(Vehiculo vehiculo) {
 
 			if (vehiculo == null) {
@@ -57,6 +61,7 @@ import java.util.ArrayList;
 
 		}
 
+		@Override
 		public void borrar(Vehiculo vehiculo) throws OperationNotSupportedException {
 
 			if (vehiculo == null) {

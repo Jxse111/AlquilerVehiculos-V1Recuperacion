@@ -7,17 +7,19 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 
-public class Clientes {
+public class Clientes implements IClientes {
 	List<Cliente> coleccionClientes;
 	public Clientes() {
 		coleccionClientes = new ArrayList<>();
 	}
 
+	@Override
 	public List<Cliente> get() {
 
 		return coleccionClientes;
 	}
 
+	@Override
 	public int getCantidad() {
 
 		int cantidadElementos = 0;
@@ -30,6 +32,7 @@ public class Clientes {
 
 	}
 
+	@Override
 	public void insertar(Cliente cliente) throws OperationNotSupportedException {
 
 		if (cliente == null) {
@@ -42,6 +45,7 @@ public class Clientes {
 		}
 	}
 
+	@Override
 	public Cliente buscar(Cliente cliente) {
 
 		if (cliente == null) {
@@ -55,6 +59,7 @@ public class Clientes {
 
 	}
 
+	@Override
 	public void borrar(Cliente cliente) throws OperationNotSupportedException {
 
 		if (cliente == null) {
@@ -71,6 +76,7 @@ public class Clientes {
 
 	}
 
+	@Override
 	public void modificar(Cliente cliente, String nombre, String telefono) throws OperationNotSupportedException {
 
 		if (cliente == null) {
