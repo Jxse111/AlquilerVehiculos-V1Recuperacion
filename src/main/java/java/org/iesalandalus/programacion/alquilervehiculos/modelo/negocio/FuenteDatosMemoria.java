@@ -1,13 +1,16 @@
 package java.org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
 
-public class FuenteDatosMemoria {
- public IClientes CrearClientes() {
+public class FuenteDatosMemoria implements IFuenteDatos {
+ @Override
+public IClientes CrearClientes() {
 	 return new Clientes();
  }
- public IVehiculos CrearVehiculos() {
+ @Override
+public IVehiculos CrearVehiculos() {
 	 return  new Vehiculos();
  }
- public IAlquileres CrearAlquileres() {
+ @Override
+public IAlquileres CrearAlquileres() {
 	 return new Alquileres();
  }
 }
