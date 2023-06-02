@@ -86,4 +86,10 @@ public abstract class Modelo {
 
 	public abstract List<Alquiler> getListaAlquileres(Vehiculo vehiculo);
 
+	public void insertar(org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler alquiler)
+			throws OperationNotSupportedException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
