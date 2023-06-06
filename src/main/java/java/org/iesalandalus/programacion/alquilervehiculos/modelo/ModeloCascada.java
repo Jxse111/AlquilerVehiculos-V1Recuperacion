@@ -11,7 +11,7 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 
-public class ModeloCascada extends Modelo {
+public abstract class ModeloCascada extends Modelo {
 
 	public ModeloCascada(IFuenteDatos fuenteDatos) {
 		super();

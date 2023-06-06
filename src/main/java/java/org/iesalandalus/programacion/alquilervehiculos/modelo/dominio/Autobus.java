@@ -6,14 +6,14 @@ public class Autobus extends Vehiculo {
 	private int plazas;
 	
 	public Autobus(String marca, String modelo, int plazas,String matricula) {
-		super();
+		super(matricula, matricula, matricula);
 		if (plazas<7||plazas>100) {
 			throw new IllegalArgumentException("ERROR: Las plazas no son correctas.");
 		}
 		setPlazas(plazas);
 	}
 	public Autobus(Autobus autobus) {
-		super();
+		super(autobus);
 		setPlazas(autobus.getPlazas());
 	}
 
