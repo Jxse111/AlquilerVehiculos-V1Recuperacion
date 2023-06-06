@@ -8,7 +8,7 @@ package java.org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 		private int plazas;
 
 		public Furgoneta(String marca, String modelo, int pma, int plazas, String matricula) {
-			super();
+			super(matricula, matricula, matricula);
 			if (plazas < 2 || plazas > 9) {
 				throw new IllegalArgumentException("ERROR: Las plazas no son correctas.");
 			}
@@ -21,7 +21,7 @@ package java.org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 		}
 
 		public Furgoneta(Furgoneta furgoneta) {
-			super();
+			super(furgoneta);
 			setPlazas(furgoneta.getPlazas());
 			setPma(furgoneta.getPma());
 		}

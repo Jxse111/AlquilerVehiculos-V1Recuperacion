@@ -1,8 +1,13 @@
 package java.org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
 
+import java.org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
+
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 
 public interface IAlquileres {
 

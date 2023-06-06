@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
+package java.org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
