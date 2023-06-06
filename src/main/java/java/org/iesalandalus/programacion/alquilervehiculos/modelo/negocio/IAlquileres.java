@@ -27,4 +27,6 @@ public interface IAlquileres {
 
 	void borrar(Alquiler alquiler) throws OperationNotSupportedException;
 
+	List<Alquiler> get(org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo turismo);
+
 }
