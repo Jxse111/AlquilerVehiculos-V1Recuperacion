@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.alquilervehiculos.vista;
+package java.org.iesalandalus.programacion.alquilervehiculos.vista;
 
 import javax.naming.OperationNotSupportedException;
 
