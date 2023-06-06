@@ -70,7 +70,6 @@ public abstract class ModeloCascada extends Modelo {
 		return aux;
 	}
 
-	@Override
 	public Alquiler buscar(Alquiler alquiler) {
 		return getAlquileres().buscar(alquiler);
 	}
@@ -89,8 +88,7 @@ public abstract class ModeloCascada extends Modelo {
 		getAlquileres().devolver(cliente, fechaDevolucion);
 	}
 
-	@Override
-	public void devolver(Vehiculo vehiculo, LocalDate fechaDevolucion) throws OperationNotSupportedException {
+	public void devolver(Alquiler vehiculo, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 		if (vehiculo == null) {
 			throw new OperationNotSupportedException("ERROR: No existe un vehiculo a devolver.");
 		}
@@ -110,7 +108,7 @@ public abstract class ModeloCascada extends Modelo {
 
 	@Override
 	public void borrar(Vehiculo vehiculo) throws OperationNotSupportedException {
-		List<Alquiler> alquileresVehiculo = getAlquileres().get(vehiculo);
+		List<Alquiler> alquileresVehiculo = getAlquileres().get();
 		for (Alquiler aux : alquileresVehiculo) {
 			borrar(aux);
 		}
@@ -118,7 +116,6 @@ public abstract class ModeloCascada extends Modelo {
 		getVehiculos().borrar(vehiculo);
 	}
 
-	@Override
 	public void borrar(Alquiler alquiler) throws OperationNotSupportedException {
 		getAlquileres().borrar(alquiler);
 	}
@@ -169,7 +166,7 @@ public abstract class ModeloCascada extends Modelo {
 	@Override
 	public List<Alquiler> getListaAlquileres(Vehiculo vehiculo) {
 		List<Alquiler> listaTemporal = new ArrayList<>();
-		for (Alquiler alquiler : getAlquileres().get(vehiculo)) {
+		for (Alquiler alquiler : getAlquileres().get()) {
 			listaTemporal.add(new Alquiler(alquiler));
 		}
 		return listaTemporal;
