@@ -80,16 +80,11 @@ public abstract class Modelo {
 
 	public abstract List<Vehiculo> getListaVehiculos();
 
-	public abstract List<org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler> getListaAlquileres();
+	public abstract List<Alquiler> getListaAlquileres();
 
-	public abstract List<org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler> getListaAlquileres(Cliente cliente);
+	public abstract List<Alquiler> getListaAlquileres(Cliente cliente);
 
-	public abstract List<org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler> getListaAlquileres(Vehiculo vehiculo);
+	public abstract List<Alquiler> getListaAlquileres(Vehiculo vehiculo);
 
-	public void insertar(org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler alquiler)
-			throws OperationNotSupportedException {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
