@@ -88,14 +88,6 @@ public abstract class ModeloCascada extends Modelo {
 		getAlquileres().devolver(cliente, fechaDevolucion);
 	}
 
-	public void devolver(Alquiler vehiculo, LocalDate fechaDevolucion) throws OperationNotSupportedException {
-		if (vehiculo == null) {
-			throw new OperationNotSupportedException("ERROR: No existe un vehiculo a devolver.");
-		}
-
-		getAlquileres().devolver(vehiculo, fechaDevolucion);
-	}
-
 	@Override
 	public void borrar(Cliente cliente) throws OperationNotSupportedException {
 		List<Alquiler> alquileresCliente = getAlquileres().get(cliente);
